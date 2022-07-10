@@ -1,0 +1,11 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/home/hugo58/Desktop/HugoArena'
+mkdir -p ./make/build
+g++ ./src/*.cpp -std=c++14 -Wall -m64 -O3 -c -I ./include
+# laymans way to move object files to make/build folder 
+mv *.o ./make/build
+mkdir -p ./make/bin
+g++ ./make/build/*.o -o ./make/bin/main -s -lSDL2main -lSDL2 -lSDL2_image 
+cp -r ./assets ./make/bin/
+make: Leaving directory '/home/hugo58/Desktop/HugoArena'
+ 
